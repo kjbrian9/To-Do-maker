@@ -1,0 +1,10 @@
+.helpText{
+    width: 600px;
+   
+}
+
+.mainDiv{
+    display: flex;
+    margin-top: 200px; 
+    justify-content: center;
+}

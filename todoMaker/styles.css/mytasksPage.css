@@ -1,0 +1,67 @@
+.title{
+    font-size: 49px;
+    margin-left: 40px;
+    margin-top: 0px
+   
+}
+
+.mainSection{
+    margin-top: 100px;
+}
+
+.taskInformation,.taskListDiv{
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    margin-left: 150px;
+    color: white;
+    
+}
+
+.taskInformation{
+    border-bottom: 3px solid white;
+    width: 1000px;
+    margin-bottom: 50px;
+}
+
+.task{
+    margin-bottom: 100px;
+}
+
+.taskList{
+    margin-top: 50px;
+    
+}
+
+.deleteButton{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 200px;
+    font-size: 20px;
+    cursor: pointer;
+    height: 40%;
+}
+
+.deleteAllButton{
+    border-style: solid;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-left: 68%;
+    transition: opacity 0.5s;
+    height: 60px;
+    width: 200px;
+    color: rgb(0, 0, 0);
+}
+
+.deleteAllButton:hover{
+    opacity: 0.5;
+}
+
+.upperRow{
+    display: flex;
+    flex-direction: row;
+ 
+}
+

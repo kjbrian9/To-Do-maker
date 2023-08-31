@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car-co</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css/header.css">
+<link rel="stylesheet" href="styles.css/global.css">
+<link rel="stylesheet" href="styles.css/mytasksPage.css">;
+</head>
+<body>
+    <div>
+        <div class="header">
+            <a href="mainPage.html" class="headerText logo">TaskMaker</a>
+            <a href="myTasksPage.html" class="headerText">My tasks</a>
+            <a href="createTaskPage.html" class="headerText">Create a task</a>
+            <a href="helpPage.html" class="headerText">Help</a>
+        </div> 
+    </div>
+    <div class="backgr"></div>
+    <div>
+        <div class="mainSection">
+            <div class="upperRow">
+            <p class="title">Tasks</p>
+            <button class="deleteAllButton"onclick="clearAllTasks()">Delete all</button>
+            </div>
+            <div class="taskInformation">
+                <p>Task name</p>
+                <p>Task description</p>
+                <p>Task date</p>
+                <p>Priority</p>
+            </div>
+            <div class="taskListDiv">
+            
+            </div>
+            
+            
+        </div>
+       
+        
+    </div>
+    <script>
+    console.log(document.querySelector('.taskListDiv').innerHTML = "");
+    
+    let taskList = [];
+    function clearAllTasks(){
+        localStorage.clear();
+        document.querySelector('.taskListDiv').innerHTML = null;
+    }
+
+    console.log(localStorage.length);
+    console.log(localStorage.getItem('task1'));
+
+    function generateList() {
+        document.querySelector('.taskListDiv').innerHTML = null;
+
+        for(let i = 0;i<localStorage.length;i++){
+            let key = localStorage.key(i);
+            let task = JSON.parse(localStorage.getItem(key));   
+            if (task == null) continue;
+            console.log(localStorage.getItem(key));
+
+            
+            taskList.push(`
+            <p class="task">${task.taskName}</p> 
+            <p>${task.taskDescription}</p>
+            <p> ${task.taskDate}</p>
+            <button onclick="deleteSingle(\`${key}\`,\`${i}\`)"
+            class="deleteButton">Delete</button>`);
+            
+            document.querySelector('.taskListDiv').innerHTML += taskList[i];    
+        }
+    }
+
+    generateList();
+    
+    function deleteSingle(key, i){
+        console.log(`deleting for index ${i}, ${key}`);
+
+        taskList.splice(i,1);
+        localStorage.removeItem(key); 
+        generateList();
+        
+
+    }
+  
+    </script> 
+    <script src="code/code.js"> </script>
+    
+</body>
+</html>

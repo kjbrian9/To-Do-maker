@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car-co</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css/header.css">
+<link rel="stylesheet" href="styles.css/global.css">
+<link rel="stylesheet" href="styles.css/createTaskPage.css">
+
+</head>
+<body>
+    <div>
+        <div class="header">
+            <a href="mainPage.html" class="headerText logo">TaskMaker</a>
+            <a href="myTasksPage.html" class="headerText">My tasks</a>
+            <a href="createTaskPage.html" class="headerText">Create a task</a>
+            <a href="helpPage.html" class="headerText">Help</a>
+        </div> 
+    </div>
+    <div>
+        <div class="backgr"></div>
+        <div class="mainSection">
+            <p class="createTask">Create your task</p>
+            <div class="todoDetails">
+                <p class="text" >name</p>
+                <p class="text">description</p>
+                <p class="text">date</p> 
+               
+                <input placeholder="Task name" maxlength="10"  class="nameInput">
+                <input placeholder="Description" maxlength="20" class="descriptionInput">
+                <input type="date" class="dateInput">
+             
+            </div>
+            <p class="announcement taskCreated"></p>
+            <button class="createTaskButton" onclick="createTask()">Create task</button>
+            <div>
+            </div>
+        </div>
+      
+        
+    </div>
+    <script>
+      
+    </script>
+    <script src="code/code.js"> </script>
+    
+</body>
+</html>
